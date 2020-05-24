@@ -1,0 +1,33 @@
+{
+  "name": "byronwong-blog",
+  "version": "1.0.0",
+  "description": "Blog for byronwong.dev",
+  "main": "postcss.config.js",
+  "dependencies": {
+    "tailwindcss": "^1.4.6",
+    "postcss": "^7.0.30",
+    "postcss-scss": "^2.1.1",
+    "postcss-import": "^12.0.1",
+    "purgecss": "^1.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "postcss-cli": "^6.0.1",
+    "postcss-import": "^12.0.1",
+    "purgecss": "^1.1.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byronwong-dev/byronwong-dev.github.io.git"
+  },
+  "author": "Byron Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byronwong-dev/byronwong-dev.github.io/issues"
+  },
+  "homepage": "https://github.com/byronwong-dev/byronwong-dev.github.io#readme"
+}

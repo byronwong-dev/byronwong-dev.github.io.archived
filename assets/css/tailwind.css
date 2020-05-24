@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Open+Sans:ital,wght@0,400;0,600;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+
+.light-mode {
+    --bg-background-primary: white;
+    --bg-background-secondary: #E5E5E5;
+    --bg-background-ternary: #898888;
+    --bg-background-fourth: #000000;
+    --color-primary: #000000;
+    --color-secondary: #898888;
+    --color-ternary: #A0AEC0;
+    --color-fourth: #ffff;
+    background: white;
+}
+
+.dark-mode {
+    --bg-background-primary: #4B4B4B;
+    --bg-background-secondary:#898888;
+    --bg-background-ternary: #A0AEC0;
+    --bg-background-fourth: #FFFFFF;
+    --color-primary: #FFFFFF;
+    --color-secondary: #C4C4C4;
+    --color-ternary: #898888;
+    --color-fourth: #4B4B4B;
+    background: #201F1F;
+}
+
+@tailwind utilities;

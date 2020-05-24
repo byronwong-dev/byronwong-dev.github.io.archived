@@ -1,0 +1,11 @@
+<nav class="flex justify-around mb-5">
+    <div class="mx-2 text-lg font-bold cursor-pointer text-copy-primary font-body"><img class="w-6" src="/assets/img/night.svg"></div>
+    <div class="hidden mx-2 text-lg font-bold text-copy-primary font-body"><img class="w-6" src="/assets/img/sunlight.svg"></div>
+    {% for item in site.data.navigation %}
+    {% if item.link %}
+        <a class="mx-2 text-lg font-semibold font-body text-copy-primary" href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+    {% else %}
+        <div class="mx-2 text-lg font-bold text-copy-ternary font-body">{{ item.name }}</div>
+    {% endif %}
+    {% endfor %}
+</nav>
