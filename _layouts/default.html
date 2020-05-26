@@ -8,13 +8,67 @@
     {% feed_meta %}
     {% seo %}
   </head>
-  <body>
-      <div class="flex flex-col items-center h-screen transition duration-300 ease-in-out light-mode">
-            <a href="/" class="top-0 left-0 self-start px-5 py-3 m-2 md:m-5 bg-background-secondary text-copy-secondary">bw.dev</a>
+  <body class="light-mode main-container">
+      <div class="flex flex-col items-center h-full transition duration-300 ease-in-out lg:mt-24">
             {{ content }}
           {% if jekyll.environment == "production" %}
               <!-- <script src="my-analytics-script.js"></script> -->
           {% endif %}
+          <div class="mt-10 text-xs text-copy-ternary">Copyright {{ 'now' | date: '%Y' }} Byron Wong</div>
       </div>
+      <script>
+
+            const setCookie = (name, value, days = 7, path = '/') => {
+                const expires = new Date(Date.now() + days * 864e5).toUTCString()
+                document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path
+            }
+
+            const getCookie = (name) => {
+                return document.cookie.split('; ').reduce((r, v) => {
+                    const parts = v.split('=')
+                    return parts[0] === name ? decodeURIComponent(parts[1]) : r
+                }, '')
+            }
+
+            const deleteCookie = (name, path) => {
+                setCookie(name, '', -1, path)
+            }
+
+          var preset = getCookie('mode');
+
+          var darkToggle = document.getElementsByClassName('dark-toggle')[0];
+          var lightToggle = document.getElementsByClassName('light-toggle')[0];
+
+          // add event listener
+          darkToggle.addEventListener('click', toggleDarkMode);
+          lightToggle.addEventListener('click', toggleDarkMode);
+
+          var mainContainer = document.getElementsByClassName('main-container')[0];
+
+          if (preset == 'dark') {
+              toggleDarkMode()
+          }
+
+          function toggleDarkMode(){
+
+              if ( mainContainer.classList.contains('light-mode') ){
+                mainContainer.classList.remove('light-mode');
+                mainContainer.classList.add('dark-mode');
+                lightToggle.classList.remove('hidden');
+                darkToggle.classList.add('hidden');
+                setCookie('mode', 'dark')
+            } else {
+                mainContainer.classList.remove('dark-mode');
+                mainContainer.classList.add('light-mode');
+                lightToggle.classList.add('hidden');
+                darkToggle.classList.remove('hidden');
+                setCookie('mode', 'light')
+              }
+
+              console.log(getCookie('mode'))
+          }
+
+           
+      </script>
   </body>
 </html>

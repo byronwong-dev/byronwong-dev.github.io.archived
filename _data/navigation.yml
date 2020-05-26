@@ -1,7 +1,7 @@
-- name: dev/entrpr
-  link: /dev-entrpr.html
+- name: bw.dev
+  link: /
 - name: is
 - name: about
   link: /about.html
-- name: learn
-  link: /learn.html
+- name: dev/learn/entrpr
+  link: 
