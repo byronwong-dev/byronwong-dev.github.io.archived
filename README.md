@@ -15,3 +15,4 @@ npx tailwindcss build assets/css/tailwind.css -o css/tailwind.css #required to c
 ### Credits
  - Site built using [Jekyll](https://jekyllrb.com/)
  - Styled using (Tailwindcss)[https://tailwindcss.com/docs]
+ - Hosted using (Github Pages)[https://pages.github.com/]
